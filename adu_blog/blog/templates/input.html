@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  body {
+
+    background-image: url({% static "blog/form.jpg" %});
+    background-size: cover;
+    background-attachment: fixed;
+  }
+</style>
+
+<body>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <nav aria-label="breadcrumb">
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/new">Your idea<a></li>
+    </ol>
+
+
+    <h1 style="text-align:center;font-size:300%;font-family:ariel;">Add your idea:</h1><br><br><br>
+
+    <form style="text-align:center;font-size:200%;" action="/new" method="post">
+      {% csrf_token %}
+      Your name:<br>
+      <input style="height:20px;font-size:14pt;" type="text" name="name">
+      <br>
+      Title:<br>
+      <input style="height:20px;font-size:14pt;" type="text" name="title">
+      <br>
+      Content:<br>
+      <textarea name="message" rows="5" cols="20"></textarea>
+      <br>
+      <input style="height:50px;font-size:15pt;color:red;" type="submit" value="Submit">
+    </form>
+
+
+</body>
+
+</html>
