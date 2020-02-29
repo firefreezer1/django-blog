@@ -59,10 +59,15 @@
 
     <div class="col-sm-4">
       
-      <p style="font: italic bold 12px/30px Georgia, serif;font-size:35px;"> {{post.title}}</p>
+  
       
-      <a href="/post/{{post.id}}"> read more
-      </a>
+      <div class="card" style="width: 18rem;border: 5px solid red;">
+  
+  <div class="card-body">
+    <h5 style="font-family:News701 BT;font-size:25px;">{{post.title}}</h5>
+    <a href="/post/{{post.id}}" class="btn btn-primary">Read more</a>
+  </div>
+</div>
     </div>
 
     {% endfor %}
