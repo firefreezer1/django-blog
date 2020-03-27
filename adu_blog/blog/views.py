@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Post
+import markdown
+
 
 
 def home(request):
@@ -27,6 +29,10 @@ def blog_form(request):
 def post_page(request, post_uuid):
     try:
         post = Post.objects.get(id=post_uuid)
+        # print({'post':post.body})
+        html = markdown.markdown(post.body)
+        post.body= html
+
         return render(request, 'post.html', {'post': post})
     except Exception as e:
         print(e)
